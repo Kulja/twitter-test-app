@@ -1,0 +1,13 @@
+<div class="content-header">
+  Tweets
+</div>
+
+<ul class='tweets'>
+  {{#each tweet in model}}
+    {{tweet-component tweet=tweet user=user createTweet='createTweet' favorite='favorite'}}
+  {{/each}}
+</ul>
+
+<div class="content-footer">
+  End of tweets
+</div>

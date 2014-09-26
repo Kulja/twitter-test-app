@@ -1,0 +1,29 @@
+{{#link-to 'tweets.tweet' tweet tagName='li' classNames='tweet'}}
+  <img class='avatar' {{bind-attr src=tweet.ownerAvatar}}>
+  <div class='text'>
+    {{tweet.text}}
+  </div>
+  <div class='bottom-tweet-actions'>
+    <ul class='tweet-actions'>
+      <li><a {{action 'replyTo' bubbles=false}}><i class="fa fa-reply"></i> Reply</a></li>
+      <li>
+        <a {{action 'favorite' bubbles=false}}>
+          {{#if isFavorite}}
+            <i class="fa fa-star"></i>
+          {{else}}
+            <i class="fa fa-star-o"></i>
+          {{/if}}
+          Favorite
+        </a>
+      </li>
+    </ul>
+  </div>
+{{/link-to}}
+
+{{#if isReplyingTo}}
+  <div class='inline-reply-tweetbox'>
+    <img class='avatar size32' {{bind-attr src=user.avatar}}>
+    {{textarea value=replyText}}
+    <button {{action 'createTweet'}} type='button' class='btn btn-primary'><i class="fa fa-twitter fa-lg"></i> Tweet</button>
+  </div>
+{{/if}}
