@@ -20,10 +20,10 @@
   </div>
 {{/link-to}}
 
-{{#if isReplyingTo}}
+{{#liquid-if isReplyingTo class='is-replying-to'}}
   <div class='inline-reply-tweetbox'>
     <img class='avatar size32' {{bind-attr src=user.avatar}}>
     {{textarea value=replyText}}
     <button {{action 'createTweet'}} type='button' class='btn btn-primary'><i class="fa fa-twitter fa-lg"></i> Tweet</button>
   </div>
-{{/if}}
+{{/liquid-if}}
