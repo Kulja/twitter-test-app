@@ -16,6 +16,11 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    contentSecurityPolicy : {
+      'connect-src': "'self' http://twitter-test-app.getsandbox.com 'unsafe-eval'", // Allow data (ajax/websocket) from getsandbox.com
+      'img-src': "'self' https://pbs.twimg.com 'unsafe-eval'" // Allow images from twitter
     }
   };
 

@@ -9,7 +9,9 @@ export default Ember.ObjectController.extend({
       tweet.set('text', tweetText);
       tweet.set('ownerName', this.get('user.name'));
       tweet.set('ownerAvatar', this.get('user.avatar'));
-      tweet.save();
+      tweet.save().then(function(tweet) {
+        console.log(tweet.id);
+      });
 
       this.set('newTweetText', '');
     }

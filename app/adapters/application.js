@@ -1,6 +1,9 @@
 import DS from 'ember-data';
 
-export default DS.Adapter.extend({
+//export default DS.Adapter.extend({
+export default DS.RESTAdapter.extend({
+  host: 'http://twitter-test-app.getsandbox.com',
+  /*
   namespace: 'api',
 
   findAll: function(store, type) {
@@ -25,6 +28,6 @@ export default DS.Adapter.extend({
       options.data = data;
     }
     return $.ajax(options);
-  }
+  }*/
 
 });
